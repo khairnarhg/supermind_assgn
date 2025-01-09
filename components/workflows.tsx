@@ -20,9 +20,7 @@ export default function Workflows() {
               Our Powerful Analytics Tools
             </h2>
             <p className="text-lg text-indigo-200/65">
-              Simple and elegant interface to start collaborating with your team
-              in minutes. It seamlessly integrates with your code and your
-              favorite programming languages.
+            Rich and Elegant interface with chatbots which can handle multilingual queries , Interactive Realtime Graphs and Realtime Social media analytics of User provided file.
             </p>
           </div>
           {/* Spotlight items */}
@@ -66,8 +64,7 @@ export default function Workflows() {
                     </span>
                   </div>
                   <p className="text-indigo-200/65">
-                    Streamline the product development flow with a content
-                    platform that's aligned across specs and insights.
+                  Gives a overall view on Social Analytics where user can ask any question they want to get relevant answers.
                   </p>
                 </div>
               </div>
@@ -114,8 +111,7 @@ export default function Workflows() {
                     </span>
                   </div>
                   <p className="text-indigo-200/65">
-                    Streamline the product development flow with a content
-                    platform that's aligned across specs and insights.
+                  Give verbal detailed insights explaining data to users, as well as showcasing interactable graphs for easy visualisation.
                   </p>
                 </div>
               </div>
@@ -161,8 +157,7 @@ export default function Workflows() {
                     </span>
                   </div>
                   <p className="text-indigo-200/65">
-                    Streamline the product development flow with a content
-                    platform that's aligned across specs and insights.
+                  Gives realtime analysis and visualisation of data from a live user account.
                   </p>
                 </div>
               </div>
