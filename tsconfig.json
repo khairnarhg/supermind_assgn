@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/EnhancedCSVAnalyzer.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/CSV/EnhancedCSVAnalyzer.jsx", "app/pages/csv.jsx"],
   "exclude": ["node_modules"]
 }

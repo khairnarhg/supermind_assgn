@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Socialytics",
-  description: "Page description",
+  description: "  Home",
 };
 
 import PageIllustration from "@/components/page-illustration";
