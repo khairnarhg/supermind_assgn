@@ -1,11 +1,14 @@
 
 import Image from "next/image";
 import FooterIllustration from "@/public/images/footer-illustration.svg";
+import Anuj from '@/public/images/anuj.png'
+import Joel from '@/public/images/joel.png'
+import Harsh from '@/public/images/harsh.png'
 
 const teamMembers = [
-  { name: 'Anuj Kadu', image: '/placeholder.svg?height=100&width=100' },
-  { name: 'Joel Mathew Job', image: '/placeholder.svg?height=100&width=100' },
-  { name: 'Harsh Khairnar', image: '/placeholder.svg?height=100&width=100' },
+  { name: 'Anuj Kadu', image: Anuj },
+  { name: 'Joel Mathew Job', image: Joel },
+  { name: 'Harsh Khairnar', image: Harsh },
 ];
 
 export default function Footer() {
@@ -31,7 +34,7 @@ export default function Footer() {
           <div className="col-span-full md:col-span-4 lg:col-span-5">
           <div className="max-w-3xl pb-12 mx-auto text-center">
           <h2 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,theme(colors.gray.200),theme(colors.indigo.200),theme(colors.gray.50),theme(colors.indigo.300),theme(colors.gray.200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-4xl">
-            Team Socialytics
+            Team 3 Musketeers
           </h2>
           
         </div>
@@ -47,7 +50,7 @@ export default function Footer() {
                       className="object-cover"
                     />
                   </div>
-                  <p className="text-sm text-gray-600">{member.name}</p>
+                  <p className="text-sm text-white">{member.name}</p>
                 </div>
               ))}
             </div>
