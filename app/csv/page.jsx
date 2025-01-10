@@ -1,5 +1,4 @@
 "use client"
-
 import React, { useState, useRef, useMemo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
@@ -10,9 +9,7 @@ import { UploadCloud, CheckCircle, XCircle, TrendingUp, BarChartIcon, PieChartIc
 import { BarChart, Bar,Brush, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell, ScatterChart, Scatter, ZAxis } from "recharts"
 import FooterIllustration from "@/public/images/footer-illustration.svg";
 import Image from "next/image";
-
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8']
-
 function EnhancedCSVAnalyzer() {
     const [file, setFile] = useState(null)
     const [data, setData] = useState([])
@@ -20,14 +17,12 @@ function EnhancedCSVAnalyzer() {
     const [rowsToShow, setRowsToShow] = useState(5)
     const [uploadStatus, setUploadStatus] = useState("idle")
     const fileInputRef = useRef(null)
-
     const handleFileChange = (event) => {
         if (event.target.files.length > 0) {
             setFile(event.target.files[0])
             setUploadStatus("idle")
         }
     }
-
     const handleUpload = () => {
         if (file) {
             const reader = new FileReader()
@@ -54,17 +49,14 @@ function EnhancedCSVAnalyzer() {
             setFile(null)
         }
     }
-
     const handleShowMore = () => {
         setRowsToShow(data.length)
         setShowAllRows(true)
     }
-
     const handleShowLess = () => {
         setRowsToShow(5)
         setShowAllRows(false)
     }
-
     const resetUpload = () => {
         setUploadStatus("idle")
         setFile(null)
@@ -72,16 +64,15 @@ function EnhancedCSVAnalyzer() {
             fileInputRef.current.value = ""
         }
     }
-
     const memoizedAnalytics = useMemo(() => {
         if (data.length === 0) return null;
     
-        // Ensure that `data` only contains valid entries with numeric likes, comments, shares, and valid dates
+        
         const validData = data.filter(row => 
             typeof row.likes === 'number' && 
             typeof row.comments === 'number' && 
             typeof row.shares === 'number' && 
-            !isNaN(new Date(row.date).getTime()) // Ensure valid date
+            !isNaN(new Date(row.date).getTime()) 
         );
     
         if (validData.length === 0) return null; // If no valid data, return null
@@ -134,12 +125,10 @@ function EnhancedCSVAnalyzer() {
             date: row.date.toLocaleDateString(),
             engagement: row.likes + row.comments + row.shares
         }))
-
         const engagementRateData = data.map(row => ({
             date: row.date.toLocaleDateString(),
             engagementRate: ((row.likes + row.comments + row.shares) / (totalLikes + totalComments + totalShares) * 100).toFixed(2)
         }))
-
         const dayOfWeekAnalysis = data.reduce((acc, row) => {
             const dayOfWeek = row.date.toLocaleDateString('en-US', { weekday: 'long' })
             if (!acc[dayOfWeek]) {
@@ -151,25 +140,21 @@ function EnhancedCSVAnalyzer() {
             acc[dayOfWeek].shares += row.shares
             return acc
         }, {})
-
         const dayOfWeekChartData = Object.entries(dayOfWeekAnalysis).map(([day, stats]) => ({
             day,
             avgLikes: (stats.likes / stats.posts).toFixed(2),
             avgComments: (stats.comments / stats.posts).toFixed(2),
             avgShares: (stats.shares / stats.posts).toFixed(2)
         }))
-
         const wordCloudData = Object.entries(postTypeCount).map(([type, count]) => ({
             value: type,
             count: count
         }))
-
         const correlationData = data.map(row => ({
             likes: row.likes,
             comments: row.comments,
             shares: row.shares
         }))
-
         return {
             totalLikes,
             totalComments,
@@ -191,9 +176,7 @@ function EnhancedCSVAnalyzer() {
             correlationData
         }
     }, [data]) // Add data as a dependency
-
     const MotionCard = motion(Card)
-
     return (
         <div className="min-h-screen p-6 space-y-6 bg-#030712 ">
             <div
@@ -287,7 +270,6 @@ function EnhancedCSVAnalyzer() {
                     </CardContent>
                 </Card>
             </div>
-
             {memoizedAnalytics && (
                 <div
                     // initial={{ opacity: 0, y: 20 }}
@@ -333,7 +315,6 @@ function EnhancedCSVAnalyzer() {
                                 </dl>
                             </CardContent>
                         </MotionCard>
-
                         <MotionCard
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -354,7 +335,6 @@ function EnhancedCSVAnalyzer() {
                             </CardContent>
                         </MotionCard>
                     </div>
-
                     <MotionCard
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -392,8 +372,6 @@ function EnhancedCSVAnalyzer() {
         </div>
     </CardContent>
 </MotionCard>
-
-
                     <div className="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2">
                         <MotionCard
                             initial={{ opacity: 0, x: -20 }}
@@ -428,7 +406,6 @@ function EnhancedCSVAnalyzer() {
                                 </div>
                             </CardContent>
                         </MotionCard>
-
                         <MotionCard
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -463,7 +440,6 @@ function EnhancedCSVAnalyzer() {
                             </CardContent>
                         </MotionCard>
                     </div>
-
                     <MotionCard
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -496,7 +472,6 @@ function EnhancedCSVAnalyzer() {
         </div>
     </CardContent>
 </MotionCard>
-
                     <div className="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2">
                     <MotionCard
     initial={{ opacity: 0, x: -20 }}
@@ -532,8 +507,6 @@ function EnhancedCSVAnalyzer() {
         </div>
     </CardContent>
 </MotionCard>
-
-
                         <MotionCard
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -560,7 +533,6 @@ function EnhancedCSVAnalyzer() {
                             </CardContent>
                         </MotionCard>
                     </div>
-
                     <div className="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2">
                         {/* <MotionCard
                             initial={{ opacity: 0, x: -20 }}
@@ -581,7 +553,6 @@ function EnhancedCSVAnalyzer() {
                                 </div>
                             </CardContent>
                         </MotionCard> */}
-
                         <MotionCard
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -607,7 +578,6 @@ function EnhancedCSVAnalyzer() {
                             </CardContent>
                         </MotionCard>
                     </div>
-
                     <MotionCard
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -672,6 +642,4 @@ function EnhancedCSVAnalyzer() {
         </div>
     )
 }
-
 export default React.memo(EnhancedCSVAnalyzer)
-
