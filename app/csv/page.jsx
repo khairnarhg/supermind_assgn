@@ -19,36 +19,39 @@ function EnhancedCSVAnalyzer() {
     const fileInputRef = useRef(null)
     const handleFileChange = (event) => {
         if (event.target.files.length > 0) {
-            setFile(event.target.files[0])
-            setUploadStatus("idle")
+            setFile(event.target.files[0]);
+            setUploadStatus("success");  // Show success immediately after file upload
         }
-    }
+    };
+    
     const handleUpload = () => {
         if (file) {
-            const reader = new FileReader()
+            setUploadStatus("analyzing"); // Show analyzing message during upload
+            const reader = new FileReader();
             reader.onload = (e) => {
-                const text = e.target.result
-                const rows = text.split("\n")
+                const text = e.target.result;
+                const rows = text.split("\n");
                 const parsedData = rows.slice(1).map(row => {
-                    const [date, type, likes, comments, shares] = row.split(",")
+                    const [date, type, likes, comments, shares] = row.split(",");
                     return {
                         date: new Date(date),
                         type,
                         likes: parseInt(likes),
                         comments: parseInt(comments),
                         shares: parseInt(shares)
-                    }
-                })
-                setData(parsedData)
-                setUploadStatus("success")
-            }
+                    };
+                });
+                setData(parsedData);
+                setUploadStatus("success");
+            };
             reader.onerror = () => {
-                setUploadStatus("error")
-            }
-            reader.readAsText(file)
-            setFile(null)
+                setUploadStatus("error");
+            };
+            reader.readAsText(file);
+            setFile(null);
         }
-    }
+    };
+    
     const handleShowMore = () => {
         setRowsToShow(data.length)
         setShowAllRows(true)
@@ -190,69 +193,97 @@ function EnhancedCSVAnalyzer() {
                     
                     <CardContent>
                         <div className="space-y-4">
-                            <AnimatePresence mode="wait">
-                                {uploadStatus === "idle" && (
-                                    <motion.div
-                                        key="upload"
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
-                                    >
-                                        <label
-                                            htmlFor="dropzone-file"
-                                            className="flex flex-col items-center justify-center w-full h-64 transition-colors duration-300 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100"
-                                        >
-                                            <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                                                <UploadCloud className="w-16 h-16 mb-4 text-gray-400" />
-                                                <p className="mb-2 text-sm text-gray-500">
-                                                    <span className="font-semibold">Click to upload</span> or drag and drop
-                                                </p>
-                                                <p className="text-xs text-gray-500">CSV file (MAX. 10MB)</p>
-                                            </div>
-                                            <Input
-                                                id="dropzone-file"
-                                                type="file"
-                                                className="hidden"
-                                                onChange={handleFileChange}
-                                                accept=".csv"
-                                                ref={fileInputRef}
-                                            />
-                                        </label>
-                                    </motion.div>
-                                )}
-                                {uploadStatus === "success" && (
-                                    <motion.div
-                                        key="success"
-                                        initial={{ opacity: 0, scale: 0.8 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        exit={{ opacity: 0, scale: 0.8 }}
-                                        className="flex flex-col items-center justify-center h-64 rounded-lg bg-green-50"
-                                    >
-                                        <CheckCircle className="w-16 h-16 mb-4 text-green-500" />
-                                        <p className="text-lg font-semibold text-green-700">File uploaded successfully!</p>
-                                        <Button onClick={resetUpload} className="mt-4 text-white bg-green-500 hover:bg-green-600">
-                                            Upload Another File
-                                        </Button>
-                                    </motion.div>
-                                )}
-                                {uploadStatus === "error" && (
-                                    <motion.div
-                                        key="error"
-                                        initial={{ opacity: 0, scale: 0.8 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        exit={{ opacity: 0, scale: 0.8 }}
-                                        className="flex flex-col items-center justify-center h-64 rounded-lg bg-red-50"
-                                    >
-                                        <XCircle className="w-16 h-16 mb-4 text-red-500" />
-                                        <p className="text-lg font-semibold text-red-700">Error uploading file</p>
-                                        <Button onClick={resetUpload} className="mt-4 text-white bg-red-500 hover:bg-red-600">
-                                            Try Again
-                                        </Button>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
+                        <AnimatePresence mode="wait">
+    {uploadStatus === "idle" && (
+        <motion.div
+            key="upload"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+        >
+            <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+                <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                    <UploadCloud className="w-16 h-16 mb-4 text-gray-400" />
+                    <p className="mb-2 text-sm text-gray-500">
+                        <span className="font-semibold">Click to upload</span> or drag and drop
+                    </p>
+                    <p className="text-xs text-gray-500">CSV file (MAX. 10MB)</p>
+                </div>
+                <Input
+                    id="dropzone-file"
+                    type="file"
+                    className="hidden"
+                    onChange={handleFileChange}
+                    accept=".csv"
+                    ref={fileInputRef}
+                />
+            </label>
+        </motion.div>
+    )}
+
+    {uploadStatus === "success" && (
+        <motion.div
+            key="success"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            className="flex flex-col items-center justify-center h-64 rounded-lg bg-green-50"
+        >
+            <CheckCircle className="w-16 h-16 mb-4 text-green-500" />
+            <p className="text-lg font-semibold text-green-700">File uploaded successfully!</p>
+            <div className="flex gap-4 mt-4">
+                {/* Upload Another File Button */}
+                <Button
+                    onClick={resetUpload}
+                    className="text-white bg-gray-500 hover:bg-gray-600"
+                >
+                    Upload Another File
+                </Button>
+                {/* Analyze Button */}
+                <Button
+                    onClick={handleUpload}
+                    className="text-white bg-indigo-500 hover:bg-indigo-700"
+                >
+                    Analyze
+                </Button>
+            </div>
+        </motion.div>
+    )}
+
+    {uploadStatus === "analyzing" && (
+        <motion.div
+            key="analyzing"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            className="flex flex-col items-center justify-center h-64 rounded-lg bg-blue-50"
+        >
+            <BarChartIcon className="w-16 h-16 mb-4 text-blue-500 animate-pulse" />
+            <p className="text-lg font-semibold text-blue-700">Analyzing data...</p>
+        </motion.div>
+    )}
+
+    {uploadStatus === "error" && (
+        <motion.div
+            key="error"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            className="flex flex-col items-center justify-center h-64 rounded-lg bg-red-50"
+        >
+            <XCircle className="w-16 h-16 mb-4 text-red-500" />
+            <p className="text-lg font-semibold text-red-700">Error uploading file</p>
+            <Button onClick={resetUpload} className="mt-4 text-white bg-red-500 hover:bg-red-600">
+                Try Again
+            </Button>
+        </motion.div>
+    )}
+</AnimatePresence>
+
+
+{/* 
                             {file && uploadStatus === "idle" && (
-                                <div className="text-sm text-gray-500">Selected file: {file.name}</div>
+                                <div className="text-sm text-white-500">Selected file: {file.name}</div>
                             )}
                             {uploadStatus === "idle" && (
                                 <div className="flex justify-center">
@@ -265,17 +296,13 @@ function EnhancedCSVAnalyzer() {
                                     </Button>
                                 </div>
 
-                            )}
+                            )} */}
                         </div>
                     </CardContent>
                 </Card>
             </div>
             {memoizedAnalytics && (
-                <div
-                // initial={{ opacity: 0, y: 20 }}
-                // animate={{ opacity: 1, y: 0 }}
-                // transition={{ duration: 0.5, delay: 0.2 }}
-                >
+                <div>
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                         <MotionCard
                             initial={{ opacity: 0, x: -20 }}

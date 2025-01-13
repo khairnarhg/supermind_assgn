@@ -41,17 +41,20 @@ export default function Footer() {
             <div className="flex justify-between">
               {teamMembers.map((member, index) => (
                 <div key={index} className="flex flex-col items-center">
-                  <div className="mb-2 overflow-hidden rounded-full">
+                <div 
+                    className="w-[200px] h-[200px] mb-2 overflow-hidden rounded-full border-2 border-white"
+                >
                     <Image
-                      src={member.image}
-                      alt={member.name}
-                      width={200}
-                      height={200}
-                      className="object-cover"
+                        src={member.image}
+                        alt={member.name}
+                        width={200}
+                        height={200}
+                        className="object-cover w-full h-full"
                     />
-                  </div>
-                  <p className="text-sm text-white">{member.name}</p>
                 </div>
+                <p className="text-xl text-white">{member.name}</p>
+            </div>
+            
               ))}
             </div>
           </div>

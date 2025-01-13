@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/CSV/EnhancedCSVAnalyzer.jsx", "app/pages/csv.jsx", "app/realtime/page.jsx", "app/csv/page.jsx", "components/PostPerformance.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/CSV/EnhancedCSVAnalyzer.jsx", "app/pages/csv.jsx", "app/realtime/page.jsx", "app/csv/page.jsx", "components/PostPerformance.jsx", "components/EngagementTrend.jsx"],
   "exclude": ["node_modules"]
 }
