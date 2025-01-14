@@ -6,7 +6,6 @@ import { StaticImageData } from "next/image";
 
 
 interface Testimonial {
-  clientImg: React.ReactNode;
   name: string;
   content: string;
   categories: number[];
@@ -171,22 +170,7 @@ export default function Testimonials() {
                 </svg>
                 <span>Posts</span>
               </button>
-              {/*
-              <button
-                className={`flex h-8 flex-1 items-center gap-2.5 whitespace-nowrap rounded-full px-3 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-200 ${category === 5 ? "relative bg-gradient-to-b from-gray-900 via-gray-800/60 to-gray-900 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_bottom,theme(colors.indigo.500/0),theme(colors.indigo.500/.5))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]" : "opacity-65 transition-opacity hover:opacity-90"}`}
-                aria-pressed={category === 5}
-                onClick={() => setCategory(5)}
-              >
-                <svg
-                  className={`fill-current ${category === 5 ? "text-indigo-500" : "text-gray-600"}`}
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height={16}
-                >
-                  <path d="M13.95.879a3 3 0 0 0-4.243 0L1.293 9.293a1 1 0 0 0-.274.51l-1 5a1 1 0 0 0 1.177 1.177l5-1a1 1 0 0 0 .511-.273l1.16-1.16a1 1 0 0 0-1.414-1.414l-.946.946-3.232.646.646-3.232 8.2-8.2a1 1 0 0 1 1.414 0l1.172 1.172a1 1 0 0 1 0 1.414l-.55.549a1 1 0 0 0 1.415 1.414l.55-.55a3 3 0 0 0 0-4.241L13.948.879ZM3.25 4.5a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Zm11.474 6.029-1.521-.752-.752-1.521c-.168-.341-.73-.341-.896 0l-.752 1.52-1.521.753a.498.498 0 0 0 0 .896l1.52.752.753 1.52a.5.5 0 0 0 .896 0l.752-1.52 1.52-.752a.498.498 0 0 0 0-.896Z" />
-                </svg>
-                <span>Enteprise</span>
-              </button> */}
+              
             </div>
           </div>
 
@@ -237,16 +221,7 @@ export function Testimonial({
         <p className="text-indigo-200/65 before:content-['“'] after:content-['”']">
           {children}
         </p>
-        <div className="flex items-center gap-3">
-          {/* <Image
-            className="inline-flex rounded-full shrink-0"
-            src={testimonial.img}
-            width={36}
-            height={36}
-            alt={testimonial.name}
-          /> */}
-
-        </div>
+       
       </div>
     </article>
   );

@@ -14,7 +14,7 @@ const teamMembers = [
 export default function Footer() {
   return (
     <footer>
-      <div className="relative max-w-6xl px-4 mx-auto sm:px-6">
+      <div className="relative max-w-6xl px-4 mx-auto sm:px-6 -top-10">
         {/* Footer illustration */}
         <div
           className="absolute bottom-0 -translate-x-1/2 pointer-events-none left-1/2 -z-10"
@@ -41,17 +41,20 @@ export default function Footer() {
             <div className="flex justify-between">
               {teamMembers.map((member, index) => (
                 <div key={index} className="flex flex-col items-center">
-                  <div className="mb-2 overflow-hidden rounded-full">
+                <div 
+                    className="w-[200px] h-[200px] mb-2 overflow-hidden rounded-full border-2 border-white"
+                >
                     <Image
-                      src={member.image}
-                      alt={member.name}
-                      width={100}
-                      height={100}
-                      className="object-cover"
+                        src={member.image}
+                        alt={member.name}
+                        width={200}
+                        height={200}
+                        className="object-cover w-full h-full"
                     />
-                  </div>
-                  <p className="text-sm text-white">{member.name}</p>
                 </div>
+                <p className="text-xl text-white">{member.name}</p>
+            </div>
+            
               ))}
             </div>
           </div>
