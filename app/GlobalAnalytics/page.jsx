@@ -31,6 +31,19 @@ const staticImagesData = [
   { name: "Shares", value: 700 },
 ];
 
+// const comparisonData = [
+//   { name: "Reels", likes: 62655, comments: 10339, shares: 7273 },
+//   { name: "Carousel", likes: 24165, comments: 3648, shares: 2413 },
+//   { name: "Static Images", likes: 3000, comments: 1500, shares: 700 },
+// ];
+
+const comparisonData = [
+  { name: "Likes", Reels: 62655, Carousel: 24165, StaticImages: 3000 },
+  { name: "Comments", Reels: 10339, Carousel: 3648, StaticImages: 1500 },
+  { name: "Shares", Reels: 7273, Carousel: 2413, StaticImages: 700 },
+];
+
+
 function MetricCard({ title, value, color }) {
   return (
     <Card className={`bg-gradient-to-br ${color}`}>
@@ -78,7 +91,14 @@ function PieChartCard({ title, data }) {
   );
 }
 
-function BarChartCard({ title, data, dataKey }) {
+function BarChartCard({ title, data }) {
+  const chartData = data.map(item => ({
+    name: item.name,  // "Likes", "Comments", "Shares"
+    Reels: item.Reels,  // Value for Reels
+    Carousel: item.Carousel,  // Value for Carousel
+    StaticImages: item.StaticImages,  // Value for StaticImages
+  }));
+
   return (
     <Card className="bg-gray-800 border-gray-700">
       <CardHeader>
@@ -87,13 +107,14 @@ function BarChartCard({ title, data, dataKey }) {
       <CardContent>
         <div className="h-64">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={data}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey={dataKey} />
+            <BarChart data={chartData}>
+              <XAxis dataKey="name" />  {/* Labels for Likes, Comments, Shares */}
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar dataKey={dataKey} fill="#8884d8" />
+              <Bar dataKey="Reels" fill="#8884d8" name="Reels" />
+              <Bar dataKey="Carousel" fill="#82ca9d" name="Carousel" />
+              <Bar dataKey="StaticImages" fill="#ffc658" name="StaticImages" />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -101,6 +122,7 @@ function BarChartCard({ title, data, dataKey }) {
     </Card>
   );
 }
+
 
 
 export default function GlobalAnalytics() {
@@ -124,7 +146,7 @@ export default function GlobalAnalytics() {
       </Card>
 
       <div>
-        <h2 className="mb-6 text-3xl font-semibold text-center">
+        <h2 className="mb-6 text-3xl font-semibold text-center" style={{marginTop: '2rem'}}>
           Metrics Right From Our Knowledge Base
         </h2>
 
@@ -136,7 +158,7 @@ export default function GlobalAnalytics() {
       </div>
 
       <div>
-        <h2 className="mb-6 text-3xl font-semibold text-center">
+        <h2 className="mb-6 text-3xl font-semibold text-center" style={{marginTop: '2rem'}}>
           Engagement Breakdown by Content Type
         </h2>
 
@@ -148,15 +170,16 @@ export default function GlobalAnalytics() {
       </div>
 
       <div>
-        <h2 className="mb-6 text-3xl font-semibold text-center">
+        <h2 className="mb-6 text-3xl font-semibold text-center" style={{marginTop: '2rem'}}>
           Content Type Comparison
         </h2>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          <BarChartCard title="Likes Comparison" data={comparisonData} dataKey="likes" />
-          <BarChartCard title="Comments Comparison" data={comparisonData} dataKey="comments" />
-          <BarChartCard title="Shares Comparison" data={comparisonData} dataKey="shares" />
+        <div className="flex justify-center items-center p-4 ">
+          <BarChartCard title="Reach Comparison" data={comparisonData} />
+          {/* <BarChartCard title="Comments Comparison" data={comparisonData} />
+          <BarChartCard title="Shares Comparison" data={comparisonData} /> */}
         </div>
+
       </div>
     </div>
   );
