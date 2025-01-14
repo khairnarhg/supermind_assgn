@@ -35,8 +35,15 @@ function GlobalAnalytics() {
       >
         Global Analytics
       </h1>
+      <h1
+        className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,theme(colors.gray.200),theme(colors.indigo.200),theme(colors.gray.50),theme(colors.indigo.300),theme(colors.gray.200))] bg-[length:200%_auto] bg-clip-text pb-5 font-nacelle text-4xl font-semibold text-transparent md:text-4xl"
+        data-aos="fade-up"
+        style={{marginTop: '1rem'}}
+      >
+        Get Insights from Our AI-Powered Multilingual Chatbot
+      </h1>
       <div className="div">
-        <ChatBot/>
+        <ChatBot  />
       </div>
       <h1
         className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,theme(colors.gray.200),theme(colors.indigo.200),theme(colors.gray.50),theme(colors.indigo.300),theme(colors.gray.200))] bg-[length:200%_auto] bg-clip-text pb-5 font-nacelle text-4xl font-semibold text-transparent md:text-4xl"

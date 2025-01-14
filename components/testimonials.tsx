@@ -215,10 +215,9 @@ export function Testimonial({
   children,
 }: {
   testimonial: {
-    img: StaticImageData;
-    clientImg: StaticImageData;
+
     name: string;
-    company: string;
+
     content: string;
     categories: number[];
   };
