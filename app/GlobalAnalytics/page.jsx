@@ -78,22 +78,22 @@ function PieChartCard({ title, data }) {
   );
 }
 
-function BarChartCard({ title, data, dataKey }: { title: string; data: Array<any>; dataKey: string }) {
+function BarChartCard({ title, data, dataKey }) {
   return (
     <Card className="bg-gray-800 border-gray-700">
       <CardHeader>
-        <CardTitle className="text-xl font-semibold text-gray-100">{title}</CardTitle>
+        <CardTitle className="text-xl font-semibold">{title}</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="h-64">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={data}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
-              <XAxis dataKey="name" stroke="#9CA3AF" />
-              <YAxis stroke="#9CA3AF" />
-              <Tooltip contentStyle={{ backgroundColor: '#1F2937', border: 'none' }} />
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey={dataKey} />
+              <YAxis />
+              <Tooltip />
               <Legend />
-              <Bar dataKey={dataKey} fill={COLORS[0]} />
+              <Bar dataKey={dataKey} fill="#8884d8" />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -101,6 +101,7 @@ function BarChartCard({ title, data, dataKey }: { title: string; data: Array<any
     </Card>
   );
 }
+
 
 export default function GlobalAnalytics() {
   return (
