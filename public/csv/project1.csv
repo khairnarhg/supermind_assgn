@@ -1,0 +1,498 @@
+Post_ID,Post_Type,Likes,Shares,Comments
+1,carousel,120,15,25
+2,reels,340,45,60
+3,static image,200,20,30
+4,carousel,180,18,22
+5,reels,420,50,70
+6,static image,150,10,15
+7,carousel,130,12,19
+8,reels,300,35,40
+9,static image,210,25,35
+10,carousel,100,8,12
+11,reels,450,55,80
+12,static image,190,22,28
+13,carousel,170,20,26
+14,reels,380,40,50
+15,static image,140,15,20
+16,carousel,220,30,35
+17,reels,310,32,44
+18,static image,230,27,36
+19,carousel,140,16,21
+20,reels,330,38,53
+21,static image,160,14,19
+22,carousel,200,25,29
+23,reels,410,45,65
+24,static image,180,18,24
+25,carousel,170,19,23
+26,reels,360,42,58
+27,static image,150,13,17
+28,carousel,110,10,18
+29,reels,400,48,68
+30,static image,220,24,33
+31,carousel,190,21,27
+32,reels,350,43,55
+33,static image,160,12,18
+34,carousel,140,14,20
+35,reels,320,37,47
+36,static image,200,23,31
+37,carousel,130,11,17
+38,reels,430,52,72
+39,static image,170,17,22
+40,carousel,160,18,24
+41,reels,390,46,62
+42,static image,190,19,25
+43,carousel,210,28,33
+44,reels,300,34,42
+45,static image,220,26,34
+46,carousel,120,13,20
+47,reels,440,51,75
+48,static image,150,14,21
+49,carousel,180,20,27
+50,reels,370,44,59
+51,static image,165,16,23
+52,carousel,155,17,26
+53,reels,325,39,52
+54,static image,205,24,32
+55,carousel,145,15,21
+56,reels,405,47,67
+57,static image,175,18,28
+58,carousel,195,22,30
+59,reels,345,41,56
+60,static image,215,27,37
+61,carousel,115,9,16
+62,reels,425,53,78
+63,static image,185,19,26
+64,carousel,205,26,34
+65,reels,315,36,45
+66,static image,155,15,19
+67,carousel,175,17,23
+68,reels,395,49,63
+69,static image,235,28,39
+70,carousel,135,12,20
+71,reels,335,37,51
+72,static image,145,16,22
+73,carousel,195,21,28
+74,reels,415,54,76
+75,static image,165,17,25
+76,carousel,125,14,24
+77,reels,385,43,61
+78,static image,225,25,38
+79,carousel,115,10,15
+80,reels,405,46,70
+81,static image,195,23,27
+82,carousel,175,19,29
+83,reels,355,40,57
+84,static image,165,18,21
+85,carousel,135,15,22
+86,reels,325,37,48
+87,static image,205,24,33
+88,carousel,185,20,27
+89,reels,425,50,71
+90,static image,175,19,25
+91,carousel,125,11,16
+92,reels,435,56,83
+93,static image,165,17,24
+94,carousel,155,14,22
+95,reels,395,45,63
+96,static image,215,26,35
+97,carousel,115,12,19
+98,reels,375,42,58
+99,static image,185,18,26
+100,carousel,195,20,31
+101,reels,345,38,52
+102,static image,225,29,36
+103,carousel,125,13,23
+104,reels,415,47,69
+105,static image,175,16,21
+106,carousel,185,21,28
+107,reels,335,39,55
+108,static image,195,25,34
+109,carousel,145,17,24
+110,reels,395,46,66
+111,static image,165,14,20
+112,carousel,155,18,29
+113,reels,365,41,59
+114,static image,205,23,32
+115,carousel,135,12,21
+116,reels,435,51,75
+117,static image,175,19,27
+118,carousel,195,20,33
+119,reels,315,35,46
+120,static image,225,26,38
+121,carousel,115,11,18
+122,reels,425,52,79
+123,static image,185,17,25
+124,carousel,155,13,20
+125,reels,385,44,62
+126,static image,215,27,37
+127,carousel,135,15,22
+128,reels,325,39,57
+129,static image,195,22,30
+130,carousel,175,19,29
+131,reels,415,48,70
+132,static image,165,16,22
+133,carousel,125,10,19
+134,reels,345,37,51
+135,static image,205,24,31
+136,carousel,185,20,26
+137,reels,435,53,78
+138,static image,155,14,23
+139,carousel,145,16,25
+140,reels,355,40,59
+141,static image,215,28,39
+142,carousel,195,21,32
+143,reels,425,49,71
+144,static image,175,17,27
+145,carousel,135,12,19
+146,reels,315,33,47
+147,static image,165,15,24
+148,carousel,115,11,16
+149,reels,405,50,72
+150,static image,225,25,34
+151,carousel,155,16,26
+152,reels,385,42,61
+153,static image,195,23,33
+154,carousel,145,14,21
+155,reels,345,38,53
+156,static image,205,22,30
+157,carousel,135,13,20
+158,reels,415,47,67
+159,static image,185,18,28
+160,carousel,175,19,26
+161,reels,325,37,48
+162,static image,215,26,37
+163,carousel,125,10,18
+164,reels,405,51,74
+165,static image,175,17,24
+166,carousel,185,21,30
+167,reels,395,44,60
+168,static image,155,15,21
+169,carousel,135,12,19
+170,reels,365,40,55
+171,static image,225,27,35
+172,carousel,145,15,23
+173,reels,425,52,76
+174,static image,195,23,31
+175,carousel,165,18,27
+176,reels,345,39,52
+177,static image,175,16,25
+178,carousel,115,11,17
+179,reels,305,36,49
+180,static image,185,20,30
+181,carousel,155,13,22
+182,reels,405,48,70
+183,static image,215,26,35
+184,carousel,195,21,32
+185,reels,385,43,62
+186,static image,175,17,27
+187,carousel,125,14,20
+188,reels,315,35,47
+189,static image,205,24,33
+190,carousel,145,13,24
+191,reels,435,51,78
+192,static image,165,15,21
+193,carousel,155,18,27
+194,reels,395,46,66
+195,static image,195,22,32
+196,carousel,115,11,18
+197,reels,325,37,50
+198,static image,235,28,39
+199,carousel,165,17,25
+200,reels,415,49,73
+201,static image,175,16,23
+202,carousel,125,12,21
+203,reels,385,45,64
+204,static image,215,25,36
+205,carousel,145,15,22
+206,reels,345,39,57
+207,static image,195,20,30
+208,carousel,135,11,17
+209,reels,405,47,70
+210,static image,185,18,26
+211,carousel,165,16,23
+212,reels,355,40,55
+213,static image,205,24,33
+214,carousel,175,21,29
+215,reels,435,52,75
+216,static image,155,14,22
+217,carousel,125,10,17
+218,reels,375,41,59
+219,static image,195,20,28
+220,carousel,185,22,30
+221,reels,425,54,79
+222,static image,165,16,24
+223,carousel,115,11,15
+224,reels,365,39,61
+225,static image,205,25,34
+226,carousel,145,14,21
+227,reels,325,38,54
+228,static image,195,22,31
+229,carousel,135,12,19
+230,reels,415,49,72
+231,static image,175,17,25
+232,carousel,165,19,28
+233,reels,385,45,63
+234,static image,215,26,36
+235,carousel,125,13,20
+236,reels,355,40,58
+237,static image,185,18,27
+238,carousel,155,16,24
+239,reels,425,51,75
+240,static image,165,15,23
+241,carousel,135,12,19
+242,reels,395,47,69
+243,static image,205,24,33
+244,carousel,175,21,29
+245,reels,405,49,71
+246,static image,155,15,20
+247,carousel,115,11,17
+248,reels,365,38,56
+249,static image,185,19,27
+250,carousel,145,13,22
+251,reels,325,36,50
+252,static image,215,25,35
+253,carousel,125,12,19
+254,reels,415,50,73
+255,static image,175,16,25
+256,carousel,165,17,23
+257,reels,395,45,63
+258,static image,195,21,29
+259,carousel,135,13,20
+260,reels,355,40,57
+261,static image,205,23,32
+262,carousel,115,11,16
+263,reels,425,51,74
+264,static image,165,16,22
+265,carousel,145,14,21
+266,reels,385,43,61
+267,static image,185,19,26
+268,carousel,135,12,18
+269,reels,305,34,48
+270,static image,215,26,37
+271,carousel,165,15,24
+272,reels,415,52,76
+273,static image,175,17,25
+274,carousel,125,10,17
+275,reels,375,41,58
+276,static image,195,22,31
+277,carousel,135,13,20
+278,reels,335,37,52
+279,static image,185,18,26
+280,carousel,165,19,27
+281,reels,395,46,66
+282,static image,205,24,32
+283,carousel,115,11,16
+284,reels,425,50,71
+285,static image,175,16,23
+286,carousel,145,13,22
+287,reels,385,43,61
+288,static image,195,22,28
+289,carousel,135,12,19
+290,reels,345,37,50
+291,static image,215,27,37
+292,carousel,175,19,27
+293,reels,415,51,74
+294,static image,155,15,23
+295,carousel,125,10,16
+296,reels,375,42,59
+297,static image,185,19,27
+298,carousel,145,13,21
+299,reels,325,36,49
+300,static image,205,24,33
+301,carousel,165,17,25
+302,reels,395,48,70
+303,static image,195,23,32
+304,carousel,115,12,18
+305,reels,405,51,77
+306,static image,175,18,27
+307,carousel,135,11,17
+308,reels,365,41,61
+309,static image,215,25,36
+310,carousel,145,16,23
+311,reels,325,39,54
+312,static image,195,23,30
+313,carousel,155,14,22
+314,reels,415,50,73
+315,static image,175,17,24
+316,carousel,135,13,21
+317,reels,375,42,57
+318,static image,185,18,26
+319,carousel,125,10,19
+320,reels,335,35,48
+321,static image,205,22,30
+322,carousel,175,19,29
+323,reels,425,53,77
+324,static image,165,15,24
+325,carousel,115,11,17
+326,reels,395,46,67
+327,static image,215,26,37
+328,carousel,145,13,22
+329,reels,355,40,57
+330,static image,185,18,27
+331,carousel,135,12,20
+332,reels,405,49,71
+333,static image,205,24,31
+334,carousel,165,17,26
+335,reels,385,45,62
+336,static image,155,14,21
+337,carousel,125,11,18
+338,reels,315,36,50
+339,static image,195,22,32
+340,carousel,135,10,17
+341,reels,415,48,70
+342,static image,185,20,28
+343,carousel,175,18,29
+344,reels,365,42,59
+345,static image,205,26,36
+346,carousel,125,13,20
+347,reels,335,38,53
+348,static image,155,16,23
+349,carousel,145,12,19
+350,reels,425,52,75
+351,static image,195,24,32
+352,carousel,115,11,16
+353,reels,395,45,64
+354,static image,175,17,25
+355,carousel,155,15,21
+356,reels,385,44,61
+357,static image,205,27,36
+358,carousel,135,13,20
+359,reels,325,37,52
+360,static image,195,22,30
+361,carousel,115,10,18
+362,reels,415,50,73
+363,static image,185,20,29
+364,carousel,155,17,24
+365,reels,355,39,57
+366,static image,215,25,36
+367,carousel,125,11,19
+368,reels,365,42,58
+369,static image,175,16,22
+370,carousel,135,13,21
+371,reels,425,53,77
+372,static image,205,26,35
+373,carousel,145,12,20
+374,reels,305,35,49
+375,static image,195,23,32
+376,carousel,165,18,27
+377,reels,385,44,63
+378,static image,175,16,24
+379,carousel,115,10,15
+380,reels,415,49,70
+381,static image,185,21,28
+382,carousel,125,14,21
+383,reels,325,38,55
+384,static image,165,15,22
+385,carousel,145,13,19
+386,reels,395,47,68
+387,static image,215,27,39
+388,carousel,155,16,26
+389,reels,335,37,51
+390,static image,205,25,34
+391,carousel,125,10,19
+392,reels,415,51,73
+393,static image,175,18,26
+394,carousel,165,17,23
+395,reels,365,42,60
+396,static image,195,20,29
+397,carousel,115,12,18
+398,reels,385,43,63
+399,static image,185,19,27
+400,carousel,135,12,19
+401,reels,355,40,58
+402,static image,215,25,35
+403,carousel,145,15,24
+404,reels,425,52,76
+405,static image,175,18,24
+406,carousel,125,13,21
+407,reels,315,34,47
+408,static image,195,21,30
+409,carousel,165,16,25
+410,reels,415,50,72
+411,static image,185,19,28
+412,carousel,115,11,18
+413,reels,325,36,49
+414,static image,215,26,37
+415,carousel,155,14,23
+416,reels,395,47,69
+417,static image,175,15,23
+418,carousel,145,12,18
+419,reels,385,43,62
+420,static image,195,21,31
+421,carousel,135,11,20
+422,reels,355,39,56
+423,static image,185,20,28
+424,carousel,165,16,25
+425,reels,415,51,74
+426,static image,175,17,22
+427,carousel,125,10,17
+428,reels,375,42,60
+429,static image,215,25,35
+430,carousel,155,15,24
+431,reels,345,38,54
+432,static image,205,24,34
+433,carousel,145,13,19
+434,reels,425,52,75
+435,static image,185,19,27
+436,carousel,115,12,18
+437,reels,365,40,58
+438,static image,175,18,26
+439,carousel,165,16,25
+440,reels,395,46,67
+441,static image,215,26,36
+442,carousel,135,13,20
+443,reels,335,37,51
+444,static image,195,23,32
+445,carousel,115,10,17
+446,reels,415,51,75
+447,static image,175,16,25
+448,carousel,145,14,23
+449,reels,375,42,59
+450,static image,185,19,28
+451,carousel,125,12,19
+452,reels,365,41,60
+453,static image,205,26,35
+454,carousel,155,16,25
+455,reels,425,52,77
+456,static image,175,17,24
+457,carousel,135,13,21
+458,reels,325,36,49
+459,static image,195,21,30
+460,carousel,115,10,15
+461,reels,415,50,74
+462,static image,215,26,36
+463,carousel,145,14,22
+464,reels,365,41,59
+465,static image,185,18,27
+466,carousel,165,17,24
+467,reels,385,44,63
+468,static image,175,16,24
+469,carousel,135,13,22
+470,reels,315,35,48
+471,static image,205,25,33
+472,carousel,115,12,19
+473,reels,425,51,74
+474,static image,195,20,30
+475,carousel,155,15,21
+476,reels,395,48,69
+477,static image,175,17,26
+478,carousel,125,10,16
+479,reels,345,39,55
+480,static image,185,22,32
+481,carousel,165,17,24
+482,reels,415,50,73
+483,static image,205,25,35
+484,carousel,135,13,21
+485,reels,385,42,62
+486,static image,175,15,22
+487,carousel,115,10,17
+488,reels,325,36,49
+489,static image,195,21,31
+490,carousel,155,14,21
+491,reels,425,53,77
+492,static image,165,17,24
+493,carousel,135,11,20
+494,reels,375,41,58
+495,static image,205,23,34
+496,carousel,115,12,17
+497,reels,395,46,67

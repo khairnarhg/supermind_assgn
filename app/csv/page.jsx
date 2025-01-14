@@ -67,8 +67,27 @@ function EnhancedCSVAnalyzer() {
             fileInputRef.current.value = ""
         }
     }
+    const handleDownloadSampleCSV = () => {
+        try {
+          const filePath = 'csv/project1.csv';
+          
+          
+          const link = document.createElement('a');
+          //link.href = "https://drive.google.com/file/d/1zk1WOOkfeDHIk0BpTSY5jrdnIF0Q15jz/view?usp=sharing"; 
+          link.href = filePath; 
+          link.download = 'sample.csv'; 
+          
+          
+          link.click();
+        } catch (e) {
+          console.log('Error in downloading CSV:', e);
+        }
+      };
+      
     const memoizedAnalytics = useMemo(() => {
         if (data.length === 0) return null;
+
+       
 
 
         const validData = data.filter(row =>
@@ -188,7 +207,11 @@ function EnhancedCSVAnalyzer() {
                     <h2 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,theme(colors.gray.200),theme(colors.indigo.200),theme(colors.gray.50),theme(colors.indigo.300),theme(colors.gray.200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-4xl self-center">
                     Enhanced CSV Analyzer
                     </h2>
+
                 </div>
+                <Button style={{color: 'white', backgroundColor: 'green', position: 'absolute', right: '3vw', transform: 'translateY(-10vh)'}} onClick={handleDownloadSampleCSV}>
+                    Download Sample CSV
+                </Button>
                 <Card className="w-full pt-5 shadow-lg">
                     
                     <CardContent>

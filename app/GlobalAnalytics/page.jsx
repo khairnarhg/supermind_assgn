@@ -25,7 +25,7 @@ const staticImagesData = [
   { name: "Shares", value: 700 },
 ];
 
-function MetricCard({ title, value, color }: { title: string; value: string; color: string }) {
+function MetricCard({ title, value, color }) {
   return (
     <Card className={`bg-gradient-to-br ${color}`}>
       <CardHeader>
@@ -38,7 +38,7 @@ function MetricCard({ title, value, color }: { title: string; value: string; col
   );
 }
 
-function PieChartCard({ title, data }: { title: string; data: Array<{ name: string; value: number }> }) {
+function PieChartCard({ title, data }) {
   return (
     <Card className="bg-gray-800 border-gray-700">
       <CardHeader>
@@ -73,11 +73,10 @@ function PieChartCard({ title, data }: { title: string; data: Array<{ name: stri
 
 export default function GlobalAnalytics() {
   return (
-    <div className="min-h-screen p-6 space-y-6 text-gray-100 bg-gray-900">
+    <div className="min-h-screen p-6 text-gray-100 bg-gray-900">
       <div className='flex items-center justify-center p-5'>
-
-        <h2 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,theme(colors.gray.200),theme(colors.indigo.200),theme(colors.gray.50),theme(colors.indigo.300),theme(colors.gray.200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-4xl self-center">
-          Enhanced CSV Analyzer
+        <h2 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,theme(colors.gray.200),theme(colors.indigo.200),theme(colors.gray.50),theme(colors.indigo.300),theme(colors.gray.200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-4xl font-semibold text-transparent md:text-4xl self-center">
+          Global Analytics
         </h2>
       </div>
 
@@ -114,4 +113,3 @@ export default function GlobalAnalytics() {
     </div>
   );
 }
-
