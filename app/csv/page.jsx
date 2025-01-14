@@ -281,22 +281,6 @@ function EnhancedCSVAnalyzer() {
 </AnimatePresence>
 
 
-{/* 
-                            {file && uploadStatus === "idle" && (
-                                <div className="text-sm text-white-500">Selected file: {file.name}</div>
-                            )}
-                            {uploadStatus === "idle" && (
-                                <div className="flex justify-center">
-                                    <Button
-                                        onClick={handleUpload}
-                                        disabled={!file}
-                                        className="text-white transition-colors duration-300 bg-indigo-500 w-60 hover:bg-indigo-700"
-                                    >
-                                        Analyze
-                                    </Button>
-                                </div>
-
-                            )} */}
                         </div>
                     </CardContent>
                 </Card>
