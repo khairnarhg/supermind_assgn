@@ -45,11 +45,12 @@ export default function ModalVideo({
       </div>
 
       {/* Video thumbnail */}
-      <button
+      <a
+      href='https://youtu.be/DUSaSaHtjDQ?si=NVIzB84gtmMii8ce'
         className="group relative flex items-center justify-center rounded-2xl focus:outline-none focus-visible:ring focus-visible:ring-indigo-200"
-        onClick={() => {
-          setModalOpen(true);
-        }}
+        // onClick={() => {
+        //   setModalOpen(true);
+        // }}
         aria-label="Watch the video"
         data-aos="fade-up"
         data-aos-delay={200}
@@ -96,11 +97,11 @@ export default function ModalVideo({
             <span className="text-sm font-medium leading-tight text-gray-300">
               Watch Demo
               <span className="text-gray-600"> - </span>
-              3:47
+              5:40
             </span>
           </span>
         </span>
-      </button>
+      </a>
       {/* End: Video thumbnail */}
 
       <Dialog
