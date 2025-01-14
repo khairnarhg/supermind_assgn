@@ -3,7 +3,6 @@ import "./css/style.css";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 
-import Header from "@/components/ui/header";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -40,7 +39,7 @@ const nacelle = localFont({
 
 export const metadata = {
   title: "Socialytix",
-
+  description: "Social Media Analyser",
 };
 
 export default function RootLayout({
