@@ -33,7 +33,7 @@ const testimonials = [
     name: "Likes",
 
     content:
-      "A basic measure of positive reaction, indicating surface-level interest and providing a quick gauge of content popularity, though not a measure of deep engagement.",
+      "A basic measure of positive reaction, indicating interest and providing a quick gauge of content popularity, though not a measure of deep engagement.",
     categories: [1, 2, 3, 4],
   },
   {

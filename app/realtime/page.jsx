@@ -24,10 +24,10 @@ export function Dashboard() {
         const interval = setInterval(() => {
             const newMetrics = {
                 likes: Math.floor(Math.random() * 100),
-                shares: Math.floor(Math.random() * 50),
-                comments: Math.floor(Math.random() * 30),
+                shares: Math.floor(Math.random() * 150),
+                comments: Math.floor(Math.random() * 100),
                 posts: Math.floor(Math.random() * 5),
-                followers: Math.floor(Math.random() * 1000),
+                followers: Math.floor(Math.random() * 100),
                 reach: Math.floor(Math.random() * 500),
             }
             setMetrics(newMetrics)
@@ -54,16 +54,17 @@ export function Dashboard() {
                             <h2 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,theme(colors.gray.200),theme(colors.indigo.200),theme(colors.gray.50),theme(colors.indigo.300),theme(colors.gray.200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-4xl self-center">
                                 Real Time Analytics
                             </h2>
-                        
+
                         </div>
                         <MetricsOverview metrics={metrics} />
                         <div className='flex flex-col gap-5'>
                             <div className="grid grid-cols-1 gap-4 mt-4 md:grid-cols-2">
                                 <EngagementChart metrics={metrics} />
-                                <PostTypeBreakdown postTypes={postTypes} />
+                                {/* <PostTypeBreakdown postTypes={postTypes} /> */}
+                                <PostPerformance postTypes={postTypes} />
                             </div>
                             <EngagementTrend engagementHistory={engagementHistory} />
-                            <PostPerformance postTypes={postTypes} />
+
                         </div>
                     </>
                 )

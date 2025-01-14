@@ -32,6 +32,7 @@ module.exports = {
       },
       animation: {
         shine: "shine 5s ease-in-out 500ms infinite",
+        wave: 'wave 1s ease-in-out infinite',
       },
       keyframes: {
         shine: {
@@ -42,6 +43,10 @@ module.exports = {
         },
         gradient: {
           to: { "background-position": "200% center" },
+        },
+        wave: {
+          '0%, 100%': { height: '10px' },
+          '50%': { height: '50px' },
         },
       },
     },
