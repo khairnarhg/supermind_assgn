@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./chatbot.css";
+import "./chatbot.css"; // Add your CSS here for styling
+import axios from "axios";
 
 function ChatBot() {
   const [messages, setMessages] = useState([
@@ -15,20 +16,20 @@ function ChatBot() {
 
   const sendMessage = async () => {
     if (!inputValue.trim()) return;
-
+  
     const userMessage = {
       sender: "user",
       text: inputValue.trim(),
     };
-
+  
     setMessages((prevMessages) => [...prevMessages, userMessage]);
     setInputValue("");
     setLoading(true);
     setError(false);
-
+  
     try {
-      const body = {
-        input_value: inputValue,
+      const body = JSON.stringify({
+        input_value: inputValue.trim(),
         output_type: "chat",
         input_type: "chat",
         tweaks: {
@@ -44,28 +45,32 @@ function ChatBot() {
           "GoogleGenerativeAIModel-XoAwW": {},
           "ChatInput-x0eMF": {},
         },
-      };
-
-      // Replace with your backend URL and headers
-      const response = await fetch("YOUR_BACKEND_URL", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          // Add any other required headers here
-        },
-        body: JSON.stringify(body),
       });
 
-      if (!response.ok) throw new Error("Failed to fetch");
-
-      const data = await response.json();
-      const botMessage = {
-        sender: "bot",
-        text: data.output_type, // Update based on your API response structure
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+      const token = process.env.API_AUTH_TOKEN;
+  
+      const config = {
+        method: 'post',
+        maxBodyLength: Infinity,
+        url: apiUrl,
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': token,
+        },
+        data: body,
       };
 
+      const response = await axios.request(config);
+  
+      const botMessage = {
+        sender: "bot",
+        text: response.data.outputs[0].results.message.data.text,
+      };
+  
       setMessages((prevMessages) => [...prevMessages, botMessage]);
     } catch (err) {
+      console.error(err);
       setError(true);
       setMessages((prevMessages) => [
         ...prevMessages,
@@ -75,9 +80,11 @@ function ChatBot() {
       setLoading(false);
     }
   };
+  
+
 
   return (
-    <div className="chatbot-container">
+    <div className="chatbot-container"      style={{marginBottom: '2rem'}}>
       <div className="chat-space">
         {messages.map((message, index) => (
           <div
@@ -87,7 +94,7 @@ function ChatBot() {
             {message.text}
           </div>
         ))}
-        {loading && <div className="loading">Loading...</div>}
+        {loading && <div className="loading-spinner bot-message"></div>}
       </div>
       <div className="input-space">
         <input
