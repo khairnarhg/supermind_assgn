@@ -13,24 +13,24 @@ export default function EngagementChart({ metrics }) {
   ]
 
   return (
-    <Card className="h-[400px] bg-gradient-to-r shadow-xl rounded-lg">
+    <Card className="flex flex-col bg-gradient-to-r shadow-xl rounded-lg">
       <CardHeader>
         <CardTitle className='text-white'>Engagement Breakdown</CardTitle>
       </CardHeader>
       <CardContent>
         <ResponsiveContainer width="100%" height={300}>
-          <PieChart>
+          <PieChart className=" p-5 mt-8">
             <Pie
               data={data}
               cx="50%"
               cy="50%"
               labelLine={false}
-              outerRadius={100}
+              outerRadius={130}
               fill="#8884d8"
               dataKey="value"
             >
               {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]}  />
               ))}
             </Pie>
             <Tooltip />
