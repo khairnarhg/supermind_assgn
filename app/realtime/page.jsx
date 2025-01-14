@@ -7,7 +7,7 @@ import PostTypeBreakdown from "@/components/PostTypeBreakdown"
 import EngagementTrend from "@/components/EngagementTrend"
 import PostPerformance from "@/components/PostPerformance"
 
-export function Dashboard() {
+export default function Page() {
     const [activeTab, setActiveTab] = useState("overview")
     const [metrics, setMetrics] = useState({
         likes: 0, shares: 0, comments: 0, posts: 0, followers: 0, reach: 0
@@ -85,5 +85,5 @@ export function Dashboard() {
     )
 }
 
-export default Dashboard
+
 
