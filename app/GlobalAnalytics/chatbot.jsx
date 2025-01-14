@@ -14,6 +14,16 @@ function ChatBot() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
+  const formatText = (text) => {
+    // Add formatting here, for example, replacing '\n' with <br /> for line breaks
+    return text.split("\n").map((str, index) => (
+      <React.Fragment key={index}>
+        {str}
+        <br />
+      </React.Fragment>
+    ));
+  };
+
   const sendMessage = async () => {
     if (!inputValue.trim()) return;
   
@@ -28,7 +38,7 @@ function ChatBot() {
     setError(false);
   
     try {
-      const body = JSON.stringify({
+      const body = {
         input_value: inputValue.trim(),
         output_type: "chat",
         input_type: "chat",
@@ -45,27 +55,13 @@ function ChatBot() {
           "GoogleGenerativeAIModel-XoAwW": {},
           "ChatInput-x0eMF": {},
         },
-      });
-
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-      const token = process.env.API_AUTH_TOKEN;
-  
-      const config = {
-        method: 'post',
-        maxBodyLength: Infinity,
-        url: apiUrl,
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': token,
-        },
-        data: body,
       };
-
-      const response = await axios.request(config);
+  
+      const response = await axios.post("api/langflow-main", body);
   
       const botMessage = {
         sender: "bot",
-        text: response.data.outputs[0].results.message.data.text,
+        text: response.data.outputs[0].outputs[0].messages[0].message,
       };
   
       setMessages((prevMessages) => [...prevMessages, botMessage]);
@@ -81,17 +77,22 @@ function ChatBot() {
     }
   };
   
+  
 
 
   return (
     <div className="chatbot-container"      style={{marginBottom: '2rem'}}>
       <div className="chat-space">
-        {messages.map((message, index) => (
+      {messages.map((message, index) => (
           <div
             key={index}
-            className={`message ${message.sender === "user" ? "user-message" : "bot-message"}`}
+            className={`message ${
+              message.sender === "user" ? "user-message" : "bot-message"
+            }`}
           >
-            {message.text}
+            {message.sender === "bot"
+              ? formatText(message.text) 
+              : message.text}
           </div>
         ))}
         {loading && <div className="loading-spinner bot-message"></div>}

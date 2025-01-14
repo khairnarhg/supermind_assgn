@@ -96,7 +96,7 @@
   }
   
   .send-button:hover {
-    background-color: #0056b3;
+    background-color: #45a049;
   }
   
   .error {
@@ -105,4 +105,11 @@
     font-size: 12px;
     margin-top: 10px;
   }
+
+  .send-button:disabled {
+  cursor: not-allowed; /* Prevent pointer cursor */
+  background-color: #ccc; /* Optional: change background to a disabled color */
+  color: #666; /* Optional: change text color to indicate it's disabled */
+  pointer-events: none; /* Ensure the hover effect does not apply */
+}
   
